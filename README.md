@@ -34,4 +34,4 @@ This is a demo login. Any valid email format along with a password of six or mor
 
 ## Author
 
-Built by Shazia Mushtaq as part of the Frontend Engineering Internship, Week 6 assignment.
+Built by Shazia Mushtaq as part of the Frontend Engineering Internship, Week 6 assignment
