@@ -15,6 +15,7 @@ The `src` folder is organized into `components` for reusable UI pieces like Side
 Clone the repository using `git clone https://github.com/ShaziaMushtaq98/Project_Management_Application-.git` and then move into the folder with `cd Project_Management_Application-`.
 
 Install dependencies with `npm install`.
+
 Create a `.env` file in the root of the project and add `VITE_API_BASE_URL=https://jsonplaceholder.typicode.com`.
 
 Run the development server with `npm run dev`, then open `http://localhost:5173` in your browser.
