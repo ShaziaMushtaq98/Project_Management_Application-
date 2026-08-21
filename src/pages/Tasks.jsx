@@ -5,17 +5,14 @@ import { fetchTasks, addTask, editTask, removeTask } from '../store/taskSlice'
 import Layout from '../components/Layout'
 import TaskModal from '../components/TaskModal'
 import ConfirmDialog from '../components/ConfirmDialog'
-
 function Tasks() {
   const dispatch = useDispatch()
   const { items: tasks, status, error } = useSelector((state) => state.tasks)
 
   const [search, setSearch] = useState('')
   const [filter, setFilter] = useState('all') // all | completed | pending
-
   const [modalOpen, setModalOpen] = useState(false)
   const [editingTask, setEditingTask] = useState(null)
-
   const [confirmOpen, setConfirmOpen] = useState(false)
   const [taskToDelete, setTaskToDelete] = useState(null)
 

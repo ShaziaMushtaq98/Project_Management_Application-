@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
   timeout: 10000,
@@ -7,13 +6,10 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
 })
-
-// Response interceptor -> turns raw axios errors into clean, user-friendly messages
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     let message = 'Something went wrong. Please try again.'
-
     if (error.response) {
       // Server responded with a status code outside 2xx
       if (error.response.status === 404) message = 'Requested data was not found.'
@@ -23,7 +19,6 @@ api.interceptors.response.use(
       // Request was made but no response received
       message = 'Network error. Check your internet connection.'
     }
-
     return Promise.reject({ ...error, friendlyMessage: message })
   }
 )

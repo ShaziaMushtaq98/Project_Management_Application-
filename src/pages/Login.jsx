@@ -3,14 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import toast from 'react-hot-toast'
 import { loginSuccess } from '../store/authSlice'
-
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState({})
   const navigate = useNavigate()
   const dispatch = useDispatch()
-
   const validate = () => {
     const newErrors = {}
     if (!email) {
@@ -26,7 +24,6 @@ function Login() {
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
-
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!validate()) return
@@ -34,24 +31,21 @@ function Login() {
     toast.success('Login successful')
     navigate('/dashboard')
   }
-
   return (
     <div className="min-h-screen flex bg-gray-50">
       {/* Left branding panel - hidden on small screens */}
       <div className="hidden lg:flex lg:w-1/2 bg-slate-900 text-white flex-col justify-center px-16">
-        <h1 className="text-3xl font-bold mb-4">PM Tool</h1>
+        <h1 className="text-3xl font-bold mb-4">Project Management Tool</h1>
         <p className="text-slate-400 text-lg leading-relaxed">
           Manage your projects, assign tasks, and track progress — all in one place.
         </p>
       </div>
-
       {/* Right form panel */}
       <div className="flex-1 flex items-center justify-center px-6">
         <div className="w-full max-w-md">
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-1">Welcome back</h2>
             <p className="text-sm text-gray-500 mb-6">Sign in to continue to your dashboard</p>
-
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Email field */}
               <div>

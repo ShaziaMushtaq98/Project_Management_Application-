@@ -2,17 +2,14 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchProjects } from '../store/projectSlice'
 import Layout from '../components/Layout'
-
 function Projects() {
   const dispatch = useDispatch()
   const { items: projects, status, error } = useSelector((state) => state.projects)
-
   useEffect(() => {
     if (status === 'idle') {
       dispatch(fetchProjects())
     }
   }, [status, dispatch])
-
   return (
     <Layout title="Projects" subtitle="All active projects">
       {status === 'loading' && (
@@ -20,7 +17,6 @@ function Projects() {
           <div className="w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
         </div>
       )}
-
       {status === 'failed' && (
         <div className="text-center py-20">
           <p className="text-red-500 mb-3">{error || 'Something went wrong.'}</p>
@@ -32,11 +28,9 @@ function Projects() {
           </button>
         </div>
       )}
-
       {status === 'succeeded' && projects.length === 0 && (
         <div className="text-center py-20 text-gray-400">No projects found.</div>
       )}
-
       {status === 'succeeded' && projects.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {projects.map((project) => (
