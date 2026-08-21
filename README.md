@@ -1,6 +1,6 @@
 # Mini Project Management Application
 
-A React-based project and task management tool built as the final assignment for Week 6 of the Frontend Engineering Internship
+A React-based project and task management tool built as the final assignment for Week 6 of the Frontend Engineering Internship.
 
 ## Features
 
